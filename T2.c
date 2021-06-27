@@ -229,23 +229,22 @@ int main(){
     fprintf(saida, "PG:%d\n", gd);
     while (fgets(buffer, max, entrada)){
         read = sscanf(buffer, "%4s%" SCNd64 "\n", command, &value);
-        printf("%s%" PRId64 "\n", command, value);
-        if (strcmp(command, "INC:") == 1){
+        if (strcmp(command, "INC:") == 0){
             ret = includeCompleto(direc, value, seq);
             seq = seq + 1;
-            fprintf(saida, "%s%" PRId64 "Bucket %d Slot %d Profundidade Local %d\n", command, value, ret.b, ret.s, ret.d);
+            fprintf(saida, "%s%" PRId64 " Bucket %d Slot %d Profundidade Local %d\n", command, value, ret.b, ret.s, ret.d);
             if (direc->global_depth > gd){
                 gd = direc->global_depth;
-                fprintf(saida, "DUP DIR: %d %d", ret.d, gd);
+                fprintf(saida, "DUP DIR: %d %d\n", ret.d, gd);
             }
         }
-        if (strcmp(command, "REM:")){
+        if (strcmp(command, "REM:") == 0){
             ret = remover(direc, value);
-            fprintf(saida, "%s%" PRId64 "Bucket %d Slot %d", command, value, ret.b, ret.s);
+            fprintf(saida, "%s%" PRId64 " Bucket %d Slot %d\n", command, value, ret.b, ret.s);
         }
-        if (strcmp(command, "BUS:")){
+        if (strcmp(command, "BUS:") == 0){
             ret = buscar(direc, value);
-            fprintf(saida, "%s%" PRId64 "Bucket %d Slot %d", command, value, ret.b, ret.s);
+            fprintf(saida, "%s%" PRId64 " Bucket %d Slot %d\n", command, value, ret.b, ret.s);
         }
     }
     //do {

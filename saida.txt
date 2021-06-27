@@ -1,0 +1,8 @@
+PG:2
+INC:5 Bucket 1 Slot 1 Profundidade Local 2
+INC:8 Bucket 0 Slot 1 Profundidade Local 2
+INC:26 Bucket 2 Slot 1 Profundidade Local 2
+INC:14 Bucket 2 Slot 2 Profundidade Local 2
+INC:0 Bucket 0 Slot 2 Profundidade Local 2
+INC:16 Bucket 0 Slot 1 Profundidade Local 4
+DUP DIR: 4 4
